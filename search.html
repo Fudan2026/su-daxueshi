@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>站内检索 — 苏大学士</title>
+  <meta name="description" content="苏大学士站内检索：词作、作品名、名句、人物、主题，全站条目即时检索。高级检索支持体裁、创作时期、栏目、主题组合筛选。">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <a class="nav-brand" href="index.html"><span class="seal">东坡</span>苏大学士</a>
+    <button class="nav-toggle" id="navToggle" aria-label="菜单">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="shengping.html">生平</a></li>
+      <li><a href="mingjia.html">名家谈东坡</a></li>
+      <li><a href="zuopin.html">作品精赏</a></li>
+      <li><a href="renwu.html">人物</a></li>
+      <li><a href="shenghuo.html">生活</a></li>
+      <li><a href="jinju.html">金句</a></li>
+      <li><a href="gaokao.html">高考作文</a></li>
+      <li><a href="rensheng.html">人生对标</a></li>
+      <li><a href="search.html" class="active">检索</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <header class="page-head">
+      <p class="crumb">站内检索</p>
+      <h1>寻章摘句，一键直达</h1>
+      <p class="lead">检索全站条目：词作与篇名、名句原文、人物、名家点评、主题素材。多词空格分隔（各词都要命中）；点击结果直达原文锚点。</p>
+      <div class="divider"></div>
+    </header>
+
+    <form class="search-panel" id="searchForm" action="#" role="search">
+      <div class="search-row">
+        <input class="search-input" id="searchInput" type="search"
+               placeholder="试试：定风波 · 一蓑烟雨 · 黄州 · 朝云 · 赤壁 …"
+               autocomplete="off" autofocus>
+        <button class="search-btn" type="submit">检索</button>
+      </div>
+      <button type="button" class="adv-toggle" id="advToggle">高级检索 ▼</button>
+
+      <div class="adv-panel" id="advPanel">
+        <p style="margin-bottom:1rem">按体裁、创作时期、栏目、主题<strong>组合筛选</strong>。支持"只筛不看词"：留空关键词即浏览全部符合条件者。</p>
+        <div class="adv-grid">
+          <div>
+            <label for="advType">体裁</label>
+            <select id="advType">
+              <option value="">不限</option>
+              <option value="ci">词</option>
+              <option value="shi">诗</option>
+              <option value="wen">文</option>
+              <option value="fu">赋</option>
+              <option value="ping">名家评</option>
+              <option value="ren">人物</option>
+              <option value="life">生活</option>
+            </select>
+          </div>
+          <div>
+            <label for="advEra">创作时期</label>
+            <select id="advEra">
+              <option value="">不限</option>
+              <option value="zaonian">早年·凤翔</option>
+              <option value="mizhou">密州</option>
+              <option value="xuzhou">徐州</option>
+              <option value="hangzhou">杭州</option>
+              <option value="huangzhou">黄州</option>
+              <option value="huizhou">惠州</option>
+              <option value="danzhou">儋州</option>
+              <option value="beigui">北归</option>
+            </select>
+          </div>
+          <div>
+            <label for="advCat">栏目</label>
+            <select id="advCat">
+              <option value="">不限</option>
+              <option value="zuopin">作品精赏</option>
+              <option value="mingjia">名家谈东坡</option>
+              <option value="renwu">东坡人事</option>
+              <option value="shenghuo">生活志</option>
+              <option value="jinju">金句库</option>
+              <option value="shengping">生平</option>
+              <option value="gaokao">高考作文</option>
+              <option value="rensheng">人生对标</option>
+            </select>
+          </div>
+          <div>
+            <label for="advTheme">主题</label>
+            <select id="advTheme">
+              <option value="">不限</option>
+              <option value="nijing">逆境豁达</option>
+              <option value="zheli">人生哲理</option>
+              <option value="qinqing">亲情至情</option>
+              <option value="jiaguo">家国抱负</option>
+              <option value="ziran">自然审美</option>
+              <option value="shiguang">时光岁月</option>
+              <option value="dushu">读书治学</option>
+              <option value="weidao">人间有味</option>
+            </select>
+          </div>
+        </div>
+        <button class="search-btn" type="submit">高级检索<span class="pro-badge">会员功能</span></button>
+        <div class="pro-lock" id="proLock">
+          <strong>高级检索 · 会员功能。</strong>筛选框架已全线就位，账号系统（Supabase 登录与订阅）上线后即开放——届时支持按体裁、创作时期、栏目、主题自由组合检索，并解锁后续更多专属内容。普通检索永久免费。
+        </div>
+      </div>
+    </form>
+
+    <div id="searchResults">
+      <p class="no-result">输入关键词开始检索：词牌、篇名、名句、人物、主题皆可。</p>
+    </div>
+
+    <div class="card reveal" style="margin-top:2rem">
+      <h2>检索小贴士</h2>
+      <p>① 支持空格分隔多词，如「黄州 词」，越精确越靠前。② 只记得半句？直接搜那半句，如「拣尽寒枝」。③ 词牌名、地名、人名、主题词都是有效关键词。④ 结果条目上的圆徽标告诉你它属于哪个栏目、何种体裁、哪个时期。</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p class="motto">为往圣继绝学 · 为万世开太平</p>
+    <p>苏大学士 —— 每个人心中都有个苏东坡</p>
+    <p class="fine"><a href="index.html">返回首页</a></p>
+  </footer>
+
+  <script src="assets/js/search-index.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/search.js"></script>
+</body>
+</html>
