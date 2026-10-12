@@ -2,6 +2,8 @@
 (function () {
   "use strict";
 
+  document.body.classList.add("js");
+
   // 移动端菜单
   var toggle = document.getElementById("navToggle");
   var links = document.getElementById("navLinks");
