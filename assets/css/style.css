@@ -391,6 +391,20 @@ blockquote .src { display: block; margin-top: 0.6rem; font-size: 0.88rem; color:
 body.js .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
 body.js .reveal.visible { opacity: 1; transform: none; }
 
+/* ---------- 人物谱 ---------- */
+.person-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.4rem; }
+.person-card { background: var(--paper-light); border: 1px solid var(--line); padding: 1.8rem 1.7rem; }
+.person-card h3 { letter-spacing: 0.15em; display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+.person-card .role { font-size: 0.82rem; color: var(--cinnabar); border: 1px solid var(--cinnabar); border-radius: 999px; padding: 0.05rem 0.7rem; letter-spacing: 0.15em; font-weight: 400; }
+.person-card p { margin-top: 0.7rem; font-size: 0.95rem; color: var(--ink-soft); }
+.person-card blockquote { font-size: 0.95rem; }
+
+/* ---------- 金句库 ---------- */
+.quote-group { margin-bottom: 1.6rem; }
+.quote-line { padding: 0.6rem 0; border-bottom: 1px dashed var(--line); display: flex; justify-content: space-between; gap: 1.5rem; align-items: baseline; }
+.quote-line .q { font-size: 1.03rem; }
+.quote-line .s { flex: none; font-size: 0.85rem; color: var(--ink-faint); }
+
 /* ---------- 响应式 ---------- */
 @media (max-width: 820px) {
   .nav-links {
