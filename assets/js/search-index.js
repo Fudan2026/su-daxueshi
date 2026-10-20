@@ -151,6 +151,37 @@ window.SUDX_INDEX = [
     kw:"河东狮吼 八风吹不动 苏小妹 辨伪 不合时宜 传说",
     ex:"忽闻河东狮子吼，拄杖落手心茫然。" },
 
+  /* ===== 翰墨丹青 · 书画志（4）===== */
+  { id:"sf-hanshi", t:"寒食帖 ｜ 天下第三行书的九百年", type:"art", cat:"shuhua", era:"huangzhou", themes:["nijing","zheli","dushu"],
+    kw:"寒食帖 天下第三行书 书法 黄庭坚题跋 无佛处称尊 圆明园 英法联军 菊池惺堂 关东大地震 王世杰 台北故宫 空庖煮寒菜 死灰吹不起",
+    ex:"试使东坡复为之，未必及此。——黄庭坚《题东坡寒食帖》" },
+  { id:"sf-zhenji", t:"存世真迹 ｜ 治平帖·祭黄几道文·李白仙诗卷", type:"art", cat:"shuhua", era:"", themes:["dushu"],
+    kw:"苏轼真迹 治平帖 新岁展庆帖 人来得书帖 北京故宫 祭黄几道文 上海博物馆 李白仙诗卷 大阪市立美术馆 渡海帖 前赤壁赋卷 台北故宫博物院 真迹之旅",
+    ex:"公认真迹屈指可数：北京故宫、上海博物馆、台北故宫、大阪市立美术馆。" },
+  { id:"sf-shilun", t:"尚意书论 ｜ 我书意造本无法", type:"art", cat:"shuhua", era:"", themes:["dushu","zheli"],
+    kw:"书法 书论 我书意造本无法 点画信手烦推求 石苍舒醉墨堂 自出新意不践古人 评草书 端庄杂流丽 刚健含婀娜 次韵子由论书 宋四家 苏黄米蔡 石压蛤蟆 树梢挂蛇 独醒杂志 苏黄互嘲",
+    ex:"公之字……亦甚似石压蛤蟆。——《独醒杂志》卷三" },
+  { id:"sf-huihua", t:"绘画 ｜ 枯木怪石图·潇湘竹石图·朱竹", type:"art", cat:"shuhua", era:"", themes:["dushu","ziran","zheli"],
+    kw:"文人画 绘画 枯木怪石图 米芾画史 胸中盘郁 潇湘竹石图 中国美术馆 邓拓捐赠 文同 湖州竹派 胸有成竹 宁可食无肉不可居无竹 於潜僧绿筠轩 朱竹 世间岂有墨竹 论画以形似 见与儿童邻",
+    ex:"子瞻作枯木，枝干虬屈无端……如其胸中盘郁也。——米芾《画史》" },
+
+  /* ===== 巷陌东坡 · 民间志（5）===== */
+  { id:"mj-foyin", t:"佛印斗法 ｜ 狗啃河上骨，水流东坡诗", type:"story", cat:"minjian", era:"", themes:["weidao"],
+    kw:"佛印 斗嘴 狗啃河上骨 水流东坡尸 八风吹不动 一屁过江来 玉带 金山寺 了元 高僧 民间故事 奇闻异事 民间传说",
+    ex:"狗啃河上（和尚）骨，水流东坡诗（尸）——民间为文豪与高僧量身编写的段子。" },
+  { id:"mj-duilian", t:"对联机锋 ｜ 坐请坐请上坐", type:"story", cat:"minjian", era:"", themes:["zheli","dushu"],
+    kw:"对联 坐请坐请上坐 茶敬茶敬香茶 看人下菜碟 郑板桥 发愤识遍天下字 立志读尽人间书 少年改联 民间智慧",
+    ex:"坐，请坐，请上坐；茶，敬茶，敬香茶。" },
+  { id:"mj-shisu", t:"食俗由来 ｜ 东坡肉与河豚也值一死", type:"story", cat:"minjian", era:"huangzhou", themes:["weidao"],
+    kw:"东坡肉 杭州 疏浚西湖 百姓送猪肉 民间故事 河豚 也值一死 示儿编 拼死吃河豚 蒌蒿满地芦芽短",
+    ex:"也值一死——宋人笔记《示儿编》里苏轼对河豚的评语。" },
+  { id:"mj-qingyuan", t:"情缘轶闻 ｜ 琴操·温超超·李宜·悼朝云", type:"story", cat:"minjian", era:"huizhou", themes:["qinqing","weidao"],
+    kw:"琴操 玲珑山 点化 门前冷落鞍马稀 温超超 温都监女 本事词 附会 李宜 李琪 海棠虽好不吟诗 西江月梅花 玉骨那愁瘴雾 殢人娇 白发苍颜 维摩境界 悼朝云 蝶恋花 泪满衣襟",
+    ex:"高情已逐晓云空，不与梨花同梦。——《西江月·梅花》悼朝云" },
+  { id:"mj-bianwei", t:"辨伪坊 ｜ 梨花压海棠不是苏轼写的", type:"story", cat:"minjian", era:"", themes:["dushu","zheli"],
+    kw:"一树梨花压海棠 张先 十八新娘八十郎 误传 张冠李戴 锦里先生自笑狂 春宵一刻值千金 误用 苏小妹 辨伪 考场红线",
+    ex:"十八新娘八十郎——无名氏嘲诗，常被误传为苏轼所作。" },
+
   /* ===== 金句库（8 组）===== */
   { id:"jj-nijing", t:"金句 · 逆境豁达", type:"page", cat:"jinju", era:"", themes:["nijing"],
     kw:"一蓑烟雨 也无风雨也无晴 九死南荒 门前流水尚能西 腹有诗书气自华 拣尽寒枝",
@@ -188,8 +219,8 @@ window.SUDX_INDEX = [
     kw:"人生 对标 青年学才 中年学旷 老年学淡 此心安处", ex:"一生可读苏东坡。" }
 ];
 window.SUDX_CATS = { index:"首页", shengping:"生平", mingjia:"名家谈东坡", zuopin:"作品精赏",
-  renwu:"东坡人事", shenghuo:"生活志", jinju:"金句库", gaokao:"高考作文", rensheng:"人生对标" };
-window.SUDX_TYPES = { ci:"词", shi:"诗", wen:"文", fu:"赋", ping:"名家评", ren:"人物", life:"生活", page:"页面" };
+  renwu:"东坡人事", shenghuo:"生活志", shuhua:"书画志", minjian:"民间志", jinju:"金句库", gaokao:"高考作文", rensheng:"人生对标" };
+window.SUDX_TYPES = { ci:"词", shi:"诗", wen:"文", fu:"赋", ping:"名家评", ren:"人物", life:"生活", art:"书画", story:"故事", page:"页面" };
 window.SUDX_ERAS = { zaonian:"早年·凤翔", mizhou:"密州", xuzhou:"徐州", hangzhou:"杭州",
   huangzhou:"黄州", huizhou:"惠州", danzhou:"儋州", beigui:"北归" };
 window.SUDX_THEMES = { nijing:"逆境豁达", zheli:"人生哲理", qinqing:"亲情至情", jiaguo:"家国抱负",
