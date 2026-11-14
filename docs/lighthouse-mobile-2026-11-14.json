@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-14",
+  "formFactor": "mobile",
+  "home": {
+    "performance": 100,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100
+  },
+  "english": {
+    "performance": 98,
+    "accessibility": 95,
+    "best-practices": 100,
+    "seo": 100
+  }
+}

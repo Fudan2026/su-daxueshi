@@ -59,3 +59,4 @@ node --test tests/
 - PWA：`manifest.webmanifest` + `sw.js`（iframe 嵌入态静默跳过注册）。
 - 嵌入修复：根页面镜像至 `assets/pages/`，`main.js` 在父页缺失目标时做客户端路由，修复 SuPro iframe 断链。
 - 无障碍：跳转正文、语义地标、夜读模式、对比度审计（目标 WCAG 2.1 AA）。
+- 2026-11-14 移动端 Lighthouse（首页）：性能 100、无障碍 100、最佳实践 100、SEO 100。记录见 `docs/lighthouse-mobile-2026-11-14.json`。

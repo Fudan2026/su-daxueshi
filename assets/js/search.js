@@ -20,7 +20,6 @@
   var advToggle = document.getElementById("advToggle");
   var advPanel = document.getElementById("advPanel");
   var proLock = document.getElementById("proLock");
-  if (!form || !input || !results) return;
 
   function esc(s) {
     return s.replace(/[&<>"']/g, function (c) {
@@ -67,7 +66,7 @@
   /* 普通检索：AND 语义（每个词都须命中）+ 标题/关键词/摘录加权；
      体裁名、创作时期名亦参与匹配（搜"黄州"可命中全部黄州时期作品） */
   function hayOf(d) {
-    return (d.t + " " + (d.kw || "") + " " + (d.ex || "") + " " +
+    return (d.t + " " + (d.kw || "") + " " + (d.ex || "") + " " + (d.py || "") + " " +
             (TYPES[d.type] || "") + " " + (ERAS[d.era] || "")).toLowerCase();
   }
   function basicSearch(q) {
@@ -77,22 +76,28 @@
     idx.forEach(function (d) {
       var score = 0, hits = 0;
       var hay = hayOf(d);
+      var py = (d.py || "").toLowerCase();
       terms.forEach(function (term) {
         var lt = term.toLowerCase();
         var inT = d.t.toLowerCase().indexOf(lt) !== -1;
         var inK = (d.kw || "").toLowerCase().indexOf(lt) !== -1;
         var inE = (d.ex || "").toLowerCase().indexOf(lt) !== -1;
+        var inP = py.indexOf(lt) !== -1;
         if (inT) score += 10;
         if (inK) score += 6;
         if (inE) score += 3;
-        if (!inT && !inK && !inE && hay.indexOf(lt) !== -1) score += 1;
-        if (inT || inK || inE || hay.indexOf(lt) !== -1) hits++;
+        if (inP) score += 8;
+        if (!inT && !inK && !inE && !inP && hay.indexOf(lt) !== -1) score += 1;
+        if (inT || inK || inE || inP || hay.indexOf(lt) !== -1) hits++;
       });
       if (hits === terms.length && score > 0) scored.push({ d: d, s: score });
     });
     scored.sort(function (a, b) { return b.s - a.s; });
     return scored.map(function (x) { return x.d; });
   }
+
+  window.SUDX_SEARCH = { basicSearch: basicSearch, termsOf: termsOf };
+  if (!form || !input || !results) return;
 
   /* 高级检索：筛选维度 + 可选关键词 */
   function advancedSearch(q, f) {
@@ -149,4 +154,24 @@
     input.value = preset;
     render(basicSearch(preset), termsOf(preset));
   }
+
+  /* ↑↓ 在结果间移动，Enter 打开当前条 */
+  var active = -1;
+  function move(delta) {
+    var items = results.querySelectorAll(".result-item");
+    if (!items.length) return;
+    active = Math.max(0, Math.min(items.length - 1, active + delta));
+    items.forEach(function (el, i) { el.classList.toggle("is-active", i === active); });
+    items[active].scrollIntoView({ block: "nearest" });
+  }
+  input.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowDown") { e.preventDefault(); move(1); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); move(-1); }
+    else if (e.key === "Enter" && active >= 0) {
+      var items = results.querySelectorAll(".result-item");
+      if (items[active]) { e.preventDefault(); location.href = items[active].getAttribute("href"); }
+    } else active = -1;
+  });
+  if (input && !input.getAttribute("aria-label")) input.setAttribute("aria-label", "检索全站");
+  results.setAttribute("aria-live", "polite");
 })();
