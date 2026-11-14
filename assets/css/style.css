@@ -630,6 +630,19 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .result-item.is-active { border-color: var(--cinnabar); box-shadow: 0 0 0 1px var(--cinnabar); }
 
 .en-map { margin: 0.8rem 0 0 1.2rem; color: var(--ink-soft); }
+
+.today {
+  background: var(--paper-light);
+  border: 1px solid var(--line);
+  padding: 1.3rem 1.5rem 1.15rem;
+  margin: 0 0 1.4rem;
+}
+.today-k { letter-spacing: 0.28em; color: var(--cinnabar); font-size: 0.82rem; }
+.today-q { margin-top: 0.45rem; font-size: 1.28rem; letter-spacing: 0.06em; line-height: 1.7; }
+.today-s { margin-top: 0.45rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: baseline; }
+.today-back { letter-spacing: 0.16em; }
+.today-kept { margin-top: 0.9rem; padding-top: 0.8rem; border-top: 1px dashed var(--line); display: flex; flex-direction: column; gap: 0.35rem; }
+.today-kept a { color: var(--ink-soft); text-decoration: underline; text-underline-offset: 0.18em; }
 .en-map li { margin: 0.35rem 0; }
 
 @media (prefers-reduced-motion: reduce) {

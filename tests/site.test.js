@@ -111,7 +111,7 @@ test('embed mode rewrites root links onto the mirrored pages', () => {
   const noopList = { forEach() {} };
   const context = {
     document: {
-      body: { classList: { add() {}, toggle() {} } },
+      body: { classList: { add() {}, toggle() {} }, style: {} },
       documentElement: { lang: 'zh-CN', scrollHeight: 0 },
       getElementById: () => null,
       querySelector: () => null,
